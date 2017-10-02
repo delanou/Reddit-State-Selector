@@ -4,13 +4,10 @@
 let myApp = angular.module("myApp", []);
 
 myApp.controller("stateController", function($scope) {
-
-    // I think this initializes the state
     $scope.selectedState = "All States";
 
     // sets the state in local storage
     $scope.setState = function() {
-        alert("$scope.selectedState = " +$scope.selectedState);
 
         // Save it using the Chrome extension storage API.
         chrome.storage.local.set({'storedState': $scope.selectedState}, function() {
@@ -19,5 +16,9 @@ myApp.controller("stateController", function($scope) {
             });
             console.log('Settings saved');
         });
+
+
+        // then force a reload on the tab
+        chrome.tabs.reload();
     };
 });
