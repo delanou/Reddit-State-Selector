@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2, // this needs to be 2 for some reason
+    "name": "Reddit State Selector",
+    "version": "0.1", 
+    "description": "On the Reddit home page select all states as default",
+    "browser_action": {
+        "default_icon": "reddit_icon.png", // for icon next to url
+        "default_popup": "index.html"
+    },
+    "icons": { // for the icon on the extensions page
+        "16": "reddit_icon.png",
+        "48": "reddit_icon.png",
+        "128": "reddit_icon.png"
+    },
+    "background": { // use this to load jquery before anything else
+        "scripts": ["jquery-3.2.1.min.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        { // on any page that matches reddit.com/whatever -> run the index.js script
+            "matches": [
+                "http://www.reddit.com/*",
+                "https://www.reddit.com/*"
+                ],
+
+            "js": ["jquery-3.2.1.min.js", "script.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"    
+}
