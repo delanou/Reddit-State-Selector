@@ -4,13 +4,13 @@
     "version": "0.1", 
     "description": "On the Reddit home page select all states as default",
     "browser_action": {
-        "default_icon": "reddit_icon.png", // for icon next to url
-        "default_popup": "index.html"
+        "default_icon": "./img/reddit_icon.png", // for icon next to url
+        "default_popup": "./img/index.html"
     },
     "icons": { // for the icon on the extensions page
-        "16": "reddit_icon.png",
-        "48": "reddit_icon.png",
-        "128": "reddit_icon.png"
+        "16": "./img/reddit_icon.png",
+        "48": "./img/reddit_icon.png",
+        "128": "./img/reddit_icon.png"
     },
     "background": { // use this to load jquery before anything else
         "scripts": ["jquery-3.2.1.min.js"],
@@ -23,7 +23,7 @@
                 "https://www.reddit.com/*"
                 ],
 
-            "js": ["jquery-3.2.1.min.js", "script.js"],
+            "js": ["jquery-3.2.1.min.js", "./js/script.js"],
             "run_at": "document_end"
         }
     ],
