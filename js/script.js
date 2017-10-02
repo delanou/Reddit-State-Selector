@@ -5,19 +5,14 @@
 
 (function () {
     // get second instance of spacer class in menuArea
-    let stateOptions = $(".menuarea").find('.selected'); 
+    const currentlySelected = $(".menuarea .spacer:last-child .selected").text();
 
-    // figure out how to get the value from chrome storage
-    let defaultState = chrome.storage.local.get("storedState", function(result) {
-        defaultState = result.value;
+    chrome.storage.local.get("storedState", function({storedState}) {
+        // only change webpage if state is not the one in memory
+        const sameAsSelected = currentlySelected.includes(storedState);
+        if (!sameAsSelected) {
+            const [insteadClick] = $(`a.choice:contains("${storedState}")`);
+            insteadClick.click();
+        }
     });
-
-    // only change webpage if state is not the one in memory
-    if (!stateOptions.text().includes(defaultState)) {
-        let newOption = $("a.choice:contains(" + defaultState + ")");
-
-        newOption[0].click(function() {
-            window.location.href = newOption.attr('href');
-        });
-    }
 })();

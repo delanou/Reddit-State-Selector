@@ -4,7 +4,7 @@
 let myApp = angular.module("myApp", []);
 
 myApp.controller("stateController", function($scope) {
-    
+
     // I think this initializes the state
     $scope.selectedState = "All States";
 
@@ -15,7 +15,7 @@ myApp.controller("stateController", function($scope) {
         // Save it using the Chrome extension storage API.
         chrome.storage.local.set({'storedState': $scope.selectedState}, function() {
             chrome.storage.local.get("storedState", function(result) {
-                console.log(data);
+                console.log(result);
             });
             console.log('Settings saved');
         });
