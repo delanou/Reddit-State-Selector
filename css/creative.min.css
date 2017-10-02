@@ -5,7 +5,8 @@
  */
 body,html {
     width: 300px;
-    max-height: 400px !important;
+    max-height: 460px !important;
+    overflow: auto;
 }
 body {
     font-family:Merriweather,'Helvetica Neue',Arial,sans-serif

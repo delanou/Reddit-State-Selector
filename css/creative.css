@@ -4,8 +4,9 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
  */
 body, html {
-  width: 300px;
-  height: 400px
+    width: 300px;
+    max-height: 460px !important;
+    overflow: auto;
 }
 
 body {
