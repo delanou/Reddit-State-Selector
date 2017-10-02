@@ -5,7 +5,7 @@
  */
 body,html {
     width: 300px;
-    max-height: 460px !important;
+    max-height: 400px !important;
     overflow: auto;
 }
 body {
@@ -149,7 +149,8 @@ header.masthead{
 header.masthead .header-content{
     position:relative;
     width:100%;
-    padding:150px 15px 100px;
+    /* this controls position of title */
+    padding:50px 15px 100px;
     text-align:center
 }
 header.masthead .header-content .header-content-inner h1{
