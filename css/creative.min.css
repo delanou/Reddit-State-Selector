@@ -52,6 +52,9 @@ section {
 ::selection {
     color:#fff;background:#222;text-shadow:none
 }
+::-webkit-scrollbar { 
+    display: none; 
+}
 img::selection {
     color:#fff;background:0 0
 }
