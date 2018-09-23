@@ -19,8 +19,8 @@
     "content_scripts": [
         {
             "matches": [
-                "http://www.reddit.com/*",
-                "https://www.reddit.com/*"
+                "http://old.reddit.com/*",
+                "https://old.reddit.com/*"
             ],
             "js": ["jquery-3.2.1.min.js", "./js/script.js"],
             "run_at": "document_end"
